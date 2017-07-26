@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>时间</th>
+        <th>操作</th>
+    </tr>
+    <%for(var i=0;i<rows.length;i++){%>
+     <tr>
+         <td>
+             <%=rows[i].id%>
+         </td>
+         <td>
+             <%=rows[i].title%>
+         </td>
+         <td>
+             <%=rows[i].con%>
+         </td>
+         <td>
+             <%=rows[i].time%>
+         </td>
+         <td>
+             <a href="/admin/editnews/<%=rows[i].id%>" class="btn btn-success">
+                 修改
+             </a>
+             <a href="/admin/delnews/<%=rows[i].id%>" class="btn btn-danger">
+                 删除
+             </a>
+         </td>
+     </tr>
+    <%}%>
+
+</table>
+</body>
+</html>

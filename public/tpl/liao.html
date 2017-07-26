@@ -1,0 +1,65 @@
+<style>
+    ul{
+        margin:0;
+        padding: 20px;;
+    }
+    .msg{
+        overflow: hidden;list-style: none;
+    }
+    .msg>span{
+        display: block;
+    }
+    .msg>span:nth-child(1){
+        text-align: center;
+        width:50px;
+        height:50px;
+        -webkit-border-radius:;
+        -moz-border-radius:;
+        border-radius:50%;
+        background: #00aff0;
+        color: #fff;
+        line-height: 50px;
+        font-size: 14px;
+    }
+    .msg>span:nth-child(2){
+        background:#00b0e0;line-height: 30px;padding: 5px;width: 60%;border-radius: 5px;color: #fff;box-sizing: border-box;
+        margin-left: 50px;
+    }
+    .send{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        position: fixed;bottom: 0;
+    }
+    .send>textarea{
+        display: inline-block;
+        width: 83%;
+        margin: 0;
+        overflow: auto;
+    }
+    .send>button{
+        margin: 0;
+        width:15%;
+        height: 43px;
+        display: inline-block;
+        color: #fff;
+        background: #00aff0;border: none;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/"></a>
+    <h1 class="mui-title">对话中……</h1>
+</header>
+<div class="mui-content">
+    <ul class="history" style="width:100%;overflow: auto">
+        <li ng-repeat="item in message" class="msg" >
+            <span>{{item.self}}</span>
+            <span>{{item.text}}</span>
+        </li>
+    </ul>
+    <div class="send">
+        <textarea name="" id="" cols="10" rows="1"></textarea>
+        <button ng-click="click()">发送</button>
+    </div>
+
+</div>

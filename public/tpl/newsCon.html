@@ -1,0 +1,36 @@
+<style>
+    .view-animate {
+        transition:left ease 1s;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        width:100%;
+        position:absolute;
+        left:0;
+
+    }
+    .view-animate.ng-enter {
+        left: 100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left: 0;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+
+
+    .mui-table-view:before ,.mui-table-view:after{
+        height: 0;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/"></a>
+    <h1 class="mui-title">内容</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-table-view" style="background-color: #efeff4;">
+        <h4 style="padding:0 15px;">{{title}}</h4>
+        <h5 style="padding:5px 15px;">{{time | limitTo:10}}</h5>
+        <p style="padding: 15px">{{con}}</p>
+    </div>
+</div>

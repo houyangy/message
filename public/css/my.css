@@ -1,0 +1,61 @@
+html,body{
+    height: 100%;background: #efeff4;
+}
+.view-animate{
+    background: #efeff4;
+    height: 100%;
+}
+.mui-bar-nav {
+    background: #00aff0;
+    color: #fff;
+}
+.mui-bar-nav>h1,.mui-bar-nav>a{
+    font-weight: bold;
+    color: #fff;
+}
+.addBtn{
+    width:50px;height:50px;
+    line-height:50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 30px;
+    display: block;
+    color: #fff;background: #00b0e0;
+    position: fixed;bottom: 100px;right: 20px;
+}
+.addBtn:active{
+    background: #ccc;
+}
+.message{
+    text-align: center;
+    padding:10px 0;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+    opacity: .2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+}
+input[type=search]{
+    margin-bottom: 0;
+}
+.mui-table-view-cell.mui-transitioning>.mui-slider-handle, .mui-table-view-cell.mui-transitioning>.mui-slider-left .mui-btn, .mui-table-view-cell.mui-transitioning>.mui-slider-right .mui-btn {
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: transform 0ms ease;
+}
+.mui-table-view-cell:after {
+     background-color: #fff;
+}
+.mui-table-view-cell.ng-scope{
+    border-bottom: 1px solid #c8c7cc;
+}
+.mui-search input[type=search] {
+     padding-left: 15px;
+}

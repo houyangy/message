@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <form role="form" action="/admin/updatenews" method="post">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" class="form-control" id="title" value="<%=rows['title']%>" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">con</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" value="<%=rows['con']%>" name="con" required>
+        </div>
+
+        <input type="hidden" value="<%=rows['id']%>" name="id">
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>

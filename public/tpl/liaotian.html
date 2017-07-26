@@ -1,0 +1,82 @@
+<style>
+    .view-animate {
+        transition:left ease 1s;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        width:100%;
+        position:absolute;
+        left:0;
+
+    }
+    .view-animate.ng-enter {
+        left: 100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left: 0;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+    .color{
+        color:#00aff0;
+    }
+    input[type=search]{
+        margin-bottom: 0;
+    }
+    .mui-navigate-right>div{
+        display: inline-block;
+        width: 35px;height: 35px;
+        background: #00aff0;
+        margin: 5px;
+        line-height: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    .en{
+        margin-top:25%;
+    }
+    .en>div{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .morechat{
+        width: 50px;height: 50px;border-radius: 50%;background: #eeeeff;display: inline-block;color: #fff;font-weight: normal;font-size: 50px;text-align: center;line-height: 50px;
+    }
+    .photocolor{
+        background: #00aff0;
+    }
+    .english{
+        color: #00aff0;
+    }
+</style>
+
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">聊天</h1>
+</header>
+
+<div class="mui-input-row mui-search" style="width: 100%;margin:44px 0 0 0">
+    <input type="search" class="mui-input-clear" placeholder="搜索" data-input-clear="1" data-input-search="1" ng-model="search">
+</div>
+<ul class="mui-table-view" style="margin-bottom: 50px;">
+
+    <li class="mui-table-view-cell" ng-show="type!==''" ng-click="show()" style="text-align: center">显示全部</li>
+    <li class="mui-table-view-cell">
+        <div class="mui-icon mui-icon-personadd morechat"></div>
+        <a class="" href="" style="display: inline-block;line-height: 30px;margin-left: 10px">
+            <span>群聊</span>
+        </a>
+    </li>
+
+    <li class="mui-table-view-cell" ng-repeat="item in data | filter:{en:type} |filter:{en:search} track by $index ">
+        <div class="mui-icon mui-icon-person morechat" ng-class="{photocolor:item.flag1}"></div>
+        <a class="" href="{{item.url}}" style="display: inline-block;line-height: 30px;margin-left: 10px">
+            <span ng-class="{color:item.flag1}">{{item.name}}</span>
+        </a>
+    </li>
+</ul>
+<div class="en" style="position: fixed;right:5px;width:20px;top:0;bottom:0;margin: auto 0">
+    <div ng-repeat="item in data" ng-click="filter(item.en)" class="english">
+        {{item.en|uppercase}}
+    </div>
+</div>

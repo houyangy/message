@@ -1,0 +1,39 @@
+<style>
+    .view-animate {
+        transition:left ease 1s;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        width:100%;
+        position:absolute;
+        left:0;
+
+    }
+    .view-animate.ng-enter {
+        left: 100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        left: 0;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        left:-100%;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class=" mui-pull-left" style="line-height: 44px" ng-click="save()">
+        保存
+    </a>
+    <a class=" mui-pull-right"style="line-height: 44px" ng-click="close()">
+        关闭
+    </a>
+</header>
+<div class="mui-content">
+   <div class="todocon" contenteditable="true" style="width:100%;padding:15px;box-sizing: border-box;">
+    {{current.con}}
+   </div>
+</div>
+
+
+
+
+<div class="mui-popup mui-popup-in" style="display: none;"><div class="mui-popup-inner"><div class="mui-popup-title">Hello MUI</div><div class="mui-popup-text">确认关闭吗？</div></div><div class="mui-popup-buttons "><span class="mui-popup-button confirm">确认</span><span class="mui-popup-button mui-popup-button-bold exit">取消</span></div></div>
+<div class="mui-popup-backdrop mui-active" style="display: none;"></div>
